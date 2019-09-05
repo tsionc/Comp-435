@@ -1,8 +1,8 @@
 import os
 import sys
 
-filename = "sample.txt"
 
-with open(filename, 'r') as filehandle:
-    filecontent = filehandle.read()
+# opening and reading in file.
+with open(sys.argv[1]) as f:
+    filecontent = f.read()
     print (filecontent)
