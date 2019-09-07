@@ -5,19 +5,16 @@ from collections import Counter
 
 # opening and reading in file.
 sc= []
-cc=[]
-with open(sys.argv[1]) as f:
+lineduplicat=[]
+
     #print(f.read())
-    c=Counter(int(c.rstrip(),16) for c in f if int(c.rstrip(),16)) #for case-insensitive search
+filecontent=Counter(int(filecontent,16) for filecontent in open(sys.argv[1])) #for case-insensitive search
     
     #print(sorted(c.keys()))
-    for  line in  sorted(c.keys()):
-        
-        if c[line]>1:
+for  line in  sorted(filecontent.keys()):
+        if filecontent[line]>1:
+            lineduplicat.append('%x' % line + " " + str(filecontent[line]))
             
-            cc.append('%x' % line + " " + str(c[line]))
-            
-            #print ('%x' % line, c[line] )
-    for i in cc:
-        print(i)
+for i in lineduplicat:
+     print(i)
 
