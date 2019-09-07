@@ -7,10 +7,14 @@ from collections import Counter
 sc= []
 cc=[]
 with open(sys.argv[1]) as f:
-    c=Counter(c.strip() for c in f if c.strip()) #for case-insensitive search
+    c=Counter(int(c.strip(),16) for c in f if int(c.strip(),16)) #for case-insensitive search
+    sorted (c.items())
+    #print(c)
     for  line in  c:
+        
         if c[line]>1:
             
             cc.append(line)
-            print (line, c[line] )
-   
+            
+            print (format(line, 'x'), c[line] )
+ 
